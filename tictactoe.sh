@@ -21,8 +21,22 @@ echo "----------"
 echo ${board[7]} "|" ${board[8]} "|" ${board[8]}
 
 }
-boardValue
 
+function letterAssign(){
+PLAYER1=' ';
+PLAYER2=' ';
+echo "Player1 wish to have  Character"
+read char1;
+PLAYER1=$char1;
+echo $PLAYER1
+echo "Player2 wish to have Character"
+read char2;
+PLAYER2=$char2;
+echo $PLAYER2 
+}
+
+boardValue
+letterAssign
 
 
 
