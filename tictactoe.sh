@@ -5,6 +5,8 @@
 
 echo "Welcome to Tic tac toe"
 BOARD_SIZE=9;
+TOSS=0
+
 declare -a board
 
 
@@ -29,13 +31,42 @@ echo "Player1 wish to have  Character"
 read char1;
 PLAYER1=$char1;
 echo $PLAYER1
-echo "Player2 wish to have Character"
+function player2(){
+echo "Player2 wish to have Character different then player1 "
 read char2;
 PLAYER2=$char2;
-echo $PLAYER2 
+if [[ $PLAYER1 == $PLAYER2 ]]
+then
+player2
+echo "Same Character Found"
+#PLAYER2=$char2;
+echo $PLAYER2
+else 
+echo "Different Character Got."
+PLAYER=$char2
+echo $PLAYER2
+fi
+}
+player2
+}
+
+function toss(){
+echo "Player call the toss Between 0 OR 1"
+read toss
+tossed=$(( RANDOM%2 ))
+
+echo $tossed
+TOSS=$tossed;
+if [[ $TOSS -eq $toss  ]] 
+then
+  echo "Player 1 won the tossed" 
+else
+echo "Player 2 won the tossed"
+fi
 }
 
 boardValue
+toss
 letterAssign
 
 
